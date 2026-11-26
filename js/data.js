@@ -1,0 +1,14 @@
+window.FACILITIES = [
+  { code: "AC-001",  name: "AC Split 2 PK",            category: "Elektronik", icon: "ac_unit",       status: "baik",   building: "Gedung A, Ruang 101",            desc: "Ruang Kuliah Mahasiswa",          tag: "Ruang Kuliah" },
+  { code: "PRO-001", name: "Proyektor Epson EB-X400",  category: "Elektronik", icon: "videocam",      status: "ringan", building: "Gedung B, Ruang Seminar 102",    desc: "Sarana Presentasi & Seminar",     tag: "Seminar Hall" },
+  { code: "KOM-001", name: "Komputer Laboratorium",    category: "Elektronik", icon: "desktop_windows", status: "baik", building: "Gedung A, Lab Komputer 401",     desc: "Perangkat Praktikum Komputer",    tag: "Lab Riset" },
+  { code: "FUR-001", name: "Meja Kuliah Kursi Gandeng", category: "Perabot",   icon: "chair",         status: "baik",   building: "Gedung A, Ruang 201",            desc: "Furnitur Ruang Kuliah",           tag: "Ruang Kuliah" },
+  { code: "SAN-001", name: "Kran Air Wastafel Sensor", category: "Sanitasi",   icon: "water_damage",  status: "berat",  building: "Gedung C, Toilet Lantai 1",      desc: "Sanitasi Fasilitas Umum",         tag: "Fasilitas Umum" },
+  { code: "NET-002", name: "Access Point WiFi Aruba",  category: "Jaringan",   icon: "wifi",          status: "baik",   building: "Gedung Perpustakaan Pusat Lantai 2", desc: "Infrastruktur Jaringan Kampus", tag: "Infrastruktur TIK" }
+];
+
+window.FACILITY_STATUS = {
+  baik:   { label: "Baik",          bg: "bg-status-completed-bg", text: "text-status-completed-text" },
+  ringan: { label: "Rusak Ringan",  bg: "bg-status-waiting-bg",   text: "text-status-waiting-text" },
+  berat:  { label: "Rusak Berat",   bg: "bg-status-error-bg",     text: "text-status-error-text" }
+};
