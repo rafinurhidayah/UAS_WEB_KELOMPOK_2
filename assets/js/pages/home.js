@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="pt-4 flex items-center justify-between border-t border-border/60">
-          <a class="inline-flex items-center gap-1 text-primary-container hover:text-primary font-label-md text-label-md transition-colors" href="login.html?kode=${encodeURIComponent(f.code)}">
+          <a class="inline-flex items-center gap-1 text-primary-container hover:text-primary font-label-md text-label-md transition-colors" href="pages/auth/login.html?kode=${encodeURIComponent(f.code)}">
             <span class="material-symbols-outlined text-[16px]">report</span><span>Laporkan Kerusakan</span>
           </a>
           <span class="font-caption text-caption text-text-muted">${f.tag}</span>
