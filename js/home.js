@@ -4,7 +4,13 @@
   if (!grid || !filterBar) return;
 
   const ACTIVE = ["bg-primary-container", "text-on-primary"];
-  const INACTIVE = ["bg-surface", "border", "border-border", "text-text-secondary", "hover:bg-surface-container"];
+  const INACTIVE = [
+    "bg-surface",
+    "border",
+    "border-border",
+    "text-text-secondary",
+    "hover:bg-surface-container",
+  ];
 
   function cardTemplate(f) {
     const s = window.FACILITY_STATUS[f.status];
@@ -39,16 +45,17 @@
   }
 
   function render(category) {
-    const list = category === "Semua"
-      ? window.FACILITIES
-      : window.FACILITIES.filter(f => f.category === category);
+    const list =
+      category === "Semua"
+        ? window.FACILITIES
+        : window.FACILITIES.filter((f) => f.category === category);
     grid.innerHTML = list.map(cardTemplate).join("");
   }
 
   filterBar.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-filter]");
     if (!btn) return;
-    filterBar.querySelectorAll("button").forEach(b => {
+    filterBar.querySelectorAll("button").forEach((b) => {
       b.classList.remove(...ACTIVE);
       b.classList.add(...INACTIVE);
     });

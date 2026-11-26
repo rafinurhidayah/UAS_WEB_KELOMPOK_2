@@ -39,7 +39,9 @@
 
     function checkMatch() {
       confirm.setCustomValidity(
-        confirm.value && confirm.value !== pass.value ? "Kata sandi tidak sama" : ""
+        confirm.value && confirm.value !== pass.value
+          ? "Kata sandi tidak sama"
+          : "",
       );
     }
     pass.addEventListener("input", checkMatch);
