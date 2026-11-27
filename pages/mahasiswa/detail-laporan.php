@@ -13,7 +13,7 @@
 <div class="px-4 py-6 md:px-space-lg md:py-space-xl max-w-7xl mx-auto w-full">
 
   <div class="flex items-center justify-between mb-space-md">
-    <a href="riwayat-laporan.html" class="inline-flex items-center gap-space-xs text-text-secondary hover:text-primary font-body-strong text-body-strong transition-colors group">
+    <a href="riwayat-laporan.php" class="inline-flex items-center gap-space-xs text-text-secondary hover:text-primary font-body-strong text-body-strong transition-colors group">
       <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span><span>Kembali ke Riwayat</span>
     </a>
     <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">

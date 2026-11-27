@@ -37,8 +37,8 @@
       </nav>
 
       <div class="flex items-center gap-space-sm">
-        <a class="hidden sm:inline-flex items-center justify-center h-[42px] px-space-md rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-muted transition-colors" href="pages/auth/login.html">Masuk</a>
-        <a class="inline-flex items-center justify-center h-[42px] px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors shadow-sm" href="pages/auth/register.html">Daftar Mahasiswa</a>
+        <a class="hidden sm:inline-flex items-center justify-center h-[42px] px-space-md rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-muted transition-colors" href="pages/auth/login.php">Masuk</a>
+        <a class="inline-flex items-center justify-center h-[42px] px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors shadow-sm" href="pages/auth/register.php">Daftar Mahasiswa</a>
       </div>
     </div>
   </header>
@@ -61,7 +61,7 @@
             <p class="font-body-md text-body-md text-text-secondary max-w-2xl mb-8 leading-relaxed">SIPERUSAK membantu mahasiswa melaporkan kerusakan fasilitas kampus dan memantau proses penanganannya secara terstruktur, transparan, dan akuntabel oleh Biro Sarana &amp; Prasarana.</p>
 
             <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <a class="inline-flex items-center justify-center gap-2 h-[42px] px-6 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150" href="pages/auth/login.html">
+              <a class="inline-flex items-center justify-center gap-2 h-[42px] px-6 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150" href="pages/auth/login.php">
                 <span class="material-symbols-outlined text-[18px]">add_circle</span><span>Mulai Buat Laporan</span>
               </a>
               <a class="inline-flex items-center justify-center gap-2 h-[42px] px-6 rounded-lg bg-surface border border-border hover:bg-surface-muted text-on-surface font-label-md text-label-md shadow-sm transition-all duration-150" href="#fasilitas">
@@ -247,7 +247,7 @@
           <p class="font-body-md text-body-md text-text-secondary leading-relaxed">Bantu menjaga fasilitas kampus dengan melaporkan kerusakan melalui SIPERUSAK. Setiap laporan Anda mempercepat terwujudnya lingkungan belajar yang aman dan nyaman.</p>
         </div>
         <div class="relative z-10 shrink-0 w-full sm:w-auto">
-          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-[46px] px-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150" href="pages/auth/login.html">
+          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-[46px] px-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150" href="pages/auth/login.php">
             <span class="material-symbols-outlined text-[20px]">login</span><span>Login untuk Membuat Laporan</span>
           </a>
         </div>

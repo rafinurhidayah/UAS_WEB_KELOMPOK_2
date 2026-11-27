@@ -14,7 +14,7 @@
 
   <div class="flex flex-col gap-1 mb-8">
     <div class="flex items-center gap-2 text-text-secondary text-caption font-caption mb-1">
-      <a href="dashboard.html" class="hover:text-primary transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">grid_view</span><span>Dashboard</span></a>
+      <a href="dashboard.php" class="hover:text-primary transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">grid_view</span><span>Dashboard</span></a>
       <span class="text-text-muted">/</span>
       <span class="text-on-surface font-label-sm">Buat Laporan</span>
     </div>

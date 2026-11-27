@@ -5,41 +5,41 @@
 //   data-nav="dashboard"                       -> menu sidebar yang aktif
 //   data-crumbs="Portal Mahasiswa|Dashboard"   -> breadcrumb (dipisah "|", yang terakhir ditebalkan)
 //
-// Halaman di dalam satu folder role cukup memakai href relatif (mis. "dashboard.html").
+// Halaman di dalam satu folder role cukup memakai href relatif (mis. "dashboard.php").
 (function () {
   const ROLES = {
     mahasiswa: {
       label: "Portal Mahasiswa",
       user: { name: "Ahmad Fauzi", identity: "21051204012" },
       nav: [
-        { key: "dashboard", href: "dashboard.html", icon: "dashboard", label: "Dashboard" },
-        { key: "daftar-fasilitas", href: "daftar-fasilitas.html", icon: "domain", label: "Daftar Fasilitas" },
-        { key: "buat-laporan", href: "buat-laporan.html", icon: "add_circle", label: "Buat Laporan" },
-        { key: "riwayat-laporan", href: "riwayat-laporan.html", icon: "receipt_long", label: "Riwayat Laporan" },
-        { key: "profil", href: "profil.html", icon: "account_circle", label: "Profil" },
+        { key: "dashboard", href: "dashboard.php", icon: "dashboard", label: "Dashboard" },
+        { key: "daftar-fasilitas", href: "daftar-fasilitas.php", icon: "domain", label: "Daftar Fasilitas" },
+        { key: "buat-laporan", href: "buat-laporan.php", icon: "add_circle", label: "Buat Laporan" },
+        { key: "riwayat-laporan", href: "riwayat-laporan.php", icon: "receipt_long", label: "Riwayat Laporan" },
+        { key: "profil", href: "profil.php", icon: "account_circle", label: "Profil" },
       ],
     },
     petugas: {
       label: "Portal Petugas",
       user: { name: "Bambang Sudarsono", identity: "NIP 198705122010011003" },
       nav: [
-        { key: "dashboard", href: "dashboard.html", icon: "dashboard", label: "Dashboard" },
-        { key: "data-barang", href: "data-barang.html", icon: "inventory_2", label: "Data Barang" },
-        { key: "daftar-laporan", href: "daftar-laporan.html", icon: "receipt_long", label: "Daftar Laporan" },
-        { key: "profil", href: "profil.html", icon: "account_circle", label: "Profil" },
+        { key: "dashboard", href: "dashboard.php", icon: "dashboard", label: "Dashboard" },
+        { key: "data-barang", href: "data-barang.php", icon: "inventory_2", label: "Data Barang" },
+        { key: "daftar-laporan", href: "daftar-laporan.php", icon: "receipt_long", label: "Daftar Laporan" },
+        { key: "profil", href: "profil.php", icon: "account_circle", label: "Profil" },
       ],
     },
     admin: {
       label: "Portal Admin",
       user: { name: "Siti Rahmawati", identity: "NIP 199001152015012004" },
       nav: [
-        { key: "dashboard", href: "dashboard.html", icon: "dashboard", label: "Dashboard" },
-        { key: "laporan", href: "laporan.html", icon: "receipt_long", label: "Manajemen Laporan" },
-        { key: "mahasiswa", href: "mahasiswa.html", icon: "groups", label: "Data Mahasiswa" },
-        { key: "petugas", href: "petugas.html", icon: "engineering", label: "Data Petugas" },
-        { key: "kategori", href: "kategori.html", icon: "category", label: "Kategori Fasilitas" },
-        { key: "lokasi", href: "lokasi.html", icon: "location_on", label: "Lokasi Kampus" },
-        { key: "profil", href: "profil.html", icon: "account_circle", label: "Profil" },
+        { key: "dashboard", href: "dashboard.php", icon: "dashboard", label: "Dashboard" },
+        { key: "laporan", href: "laporan.php", icon: "receipt_long", label: "Manajemen Laporan" },
+        { key: "mahasiswa", href: "mahasiswa.php", icon: "groups", label: "Data Mahasiswa" },
+        { key: "petugas", href: "petugas.php", icon: "engineering", label: "Data Petugas" },
+        { key: "kategori", href: "kategori.php", icon: "category", label: "Kategori Fasilitas" },
+        { key: "lokasi", href: "lokasi.php", icon: "location_on", label: "Lokasi Kampus" },
+        { key: "profil", href: "profil.php", icon: "account_circle", label: "Profil" },
       ],
     },
   };

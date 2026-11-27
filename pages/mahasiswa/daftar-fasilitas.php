@@ -243,7 +243,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=AC-001"
+                        href="buat-laporan.php?kode=AC-001"
                         title="Laporkan kerusakan AC-001"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"
@@ -297,7 +297,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=PRO-001"
+                        href="buat-laporan.php?kode=PRO-001"
                         title="Laporkan kerusakan PRO-001"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"
@@ -351,7 +351,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=KOM-001"
+                        href="buat-laporan.php?kode=KOM-001"
                         title="Laporkan kerusakan KOM-001"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"
@@ -405,7 +405,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=FUR-001"
+                        href="buat-laporan.php?kode=FUR-001"
                         title="Laporkan kerusakan FUR-001"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"
@@ -459,7 +459,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=SAN-001"
+                        href="buat-laporan.php?kode=SAN-001"
                         title="Laporkan kerusakan SAN-001"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"
@@ -513,7 +513,7 @@
                     </td>
                     <td class="py-3.5 px-4 text-right whitespace-nowrap">
                       <a
-                        href="buat-laporan.html?kode=NET-002"
+                        href="buat-laporan.php?kode=NET-002"
                         title="Laporkan kerusakan NET-002"
                         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-primary-container hover:bg-[#F1EAE3] hover:border-primary-container/40 transition-colors font-label-sm text-label-sm"
                         ><span class="material-symbols-outlined text-[16px]"

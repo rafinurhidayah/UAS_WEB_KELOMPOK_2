@@ -1,26 +1,26 @@
 # Halaman Admin
 
-Folder ini disiapkan untuk halaman role **Admin** (belum diimplementasikan).
+Folder ini sengaja hanya berisi `README.md` pada **Fase 1**. Antarmuka role **Admin** belum dirancang, sehingga belum ada file `.php`, `.html`, maupun `.js` yang dibuat untuk role ini.
 
 ## Rencana halaman (mengacu `docs/prd.md`)
 
 | File | Keterangan |
 |---|---|
-| `dashboard.html` | Statistik laporan, jumlah mahasiswa & petugas |
-| `laporan.html` | Manajemen seluruh laporan |
-| `detail-laporan.html` | Detail dan riwayat perubahan status |
-| `mahasiswa.html` | CRUD akun mahasiswa |
-| `petugas.html` | CRUD akun petugas |
-| `kategori.html` | CRUD kategori fasilitas |
-| `lokasi.html` | CRUD lokasi kampus |
-| `profil.html` | Profil admin |
+| `dashboard.php` | Statistik laporan, jumlah mahasiswa & petugas |
+| `laporan.php` | Manajemen seluruh laporan |
+| `detail-laporan.php` | Detail dan riwayat perubahan status |
+| `mahasiswa.php` | CRUD akun mahasiswa |
+| `petugas.php` | CRUD akun petugas |
+| `kategori.php` | CRUD kategori fasilitas |
+| `lokasi.php` | CRUD lokasi kampus |
+| `profil.php` | Profil admin |
 
-## Cara menambah halaman
+## Cara menambah halaman (fase berikutnya)
 
 1. Salin struktur dari `pages/mahasiswa/` (sidebar & topbar diisi otomatis oleh `assets/js/components/layout.js`).
 2. Set atribut pada `<body>`:
    ```html
    <body data-role="admin" data-nav="dashboard" data-crumbs="Portal Admin|Dashboard">
    ```
-3. Taruh script khusus halaman di `assets/js/pages/admin/`.
-4. Gunakan path aset berawalan `../../assets/...`.
+3. Taruh script khusus halaman di `assets/js/pages/admin/` (lihat placeholder di sana).
+4. Gunakan path aset berawalan `../../assets/...` dan tautan internal berakhiran `.php`.

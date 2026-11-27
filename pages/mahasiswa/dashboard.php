@@ -18,7 +18,7 @@
       <h1 class="font-display text-display text-[#292929]">Dashboard</h1>
       <p class="font-body-md text-body-md text-[#69645E] mt-1">Ringkasan laporan kerusakan fasilitas kampus.</p>
     </div>
-    <a href="buat-laporan.html" class="inline-flex items-center gap-2 bg-[#76563D] hover:bg-[#5E4430] text-white font-label-md text-label-md px-4 py-2.5 rounded-[9px] transition-colors focus:outline-none focus:ring-2 focus:ring-[#76563D]/20">
+    <a href="buat-laporan.php" class="inline-flex items-center gap-2 bg-[#76563D] hover:bg-[#5E4430] text-white font-label-md text-label-md px-4 py-2.5 rounded-[9px] transition-colors focus:outline-none focus:ring-2 focus:ring-[#76563D]/20">
       <svg class="w-4 h-4 stroke-[2.2]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
       <span>Buat Laporan</span>
     </a>
@@ -55,7 +55,7 @@
         <h2 class="font-headline-sm text-headline-sm text-[#292929]">Laporan Terbaru</h2>
         <span class="font-caption text-caption text-[#69645E] bg-[#F7F6F3] border border-[#E5E0D9] px-2 py-0.5 rounded-full font-medium">(5 laporan terbaru)</span>
       </div>
-      <a href="riwayat-laporan.html" class="font-label-md text-label-md text-[#76563D] hover:text-[#5E4430] hover:underline transition-colors flex items-center gap-1">Lihat Semua Riwayat <span class="text-sm">→</span></a>
+      <a href="riwayat-laporan.php" class="font-label-md text-label-md text-[#76563D] hover:text-[#5E4430] hover:underline transition-colors flex items-center gap-1">Lihat Semua Riwayat <span class="text-sm">→</span></a>
     </div>
     <div class="w-full overflow-x-auto">
       <table class="w-full text-left text-sm border-collapse">
@@ -76,7 +76,7 @@
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E]">Gedung Fakultas Teknik, Lt. 2, Ruang A203</td>
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E] whitespace-nowrap">14 Apr 2026</td>
             <td class="py-3 px-6 whitespace-nowrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#FBF1DD] text-[#8A5A13] border border-[#F0DDAF]">Menunggu</span></td>
-            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.html" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
+            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.php" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
           </tr>
           <tr class="hover:bg-[#FDFCFB] transition-colors h-[54px]">
             <td class="py-3 px-6 font-mono text-[13px] font-medium text-[#292929] whitespace-nowrap">LPR-2026-0009</td>
@@ -84,7 +84,7 @@
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E]">Gedung B, Lt. 1, Lab. Komputer 1</td>
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E] whitespace-nowrap">12 Apr 2026</td>
             <td class="py-3 px-6 whitespace-nowrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F1ECF8] text-[#68518B] border border-[#E0D7EF]">Diproses</span></td>
-            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.html" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
+            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.php" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
           </tr>
           <tr class="hover:bg-[#FDFCFB] transition-colors h-[54px]">
             <td class="py-3 px-6 font-mono text-[13px] font-medium text-[#292929] whitespace-nowrap">LPR-2026-0007</td>
@@ -92,7 +92,7 @@
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E]">Gedung Rektorat, Lt. 3, Koridor Barat</td>
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E] whitespace-nowrap">10 Apr 2026</td>
             <td class="py-3 px-6 whitespace-nowrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#EAF1F7] text-[#315E82] border border-[#D4E2EF]">Diverifikasi</span></td>
-            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.html" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
+            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.php" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
           </tr>
           <tr class="hover:bg-[#FDFCFB] transition-colors h-[54px]">
             <td class="py-3 px-6 font-mono text-[13px] font-medium text-[#292929] whitespace-nowrap">LPR-2026-0004</td>
@@ -100,7 +100,7 @@
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E]">Perpustakaan Pusat, Lt. 2, Area Baca</td>
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E] whitespace-nowrap">05 Apr 2026</td>
             <td class="py-3 px-6 whitespace-nowrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E9F3EC] text-[#356B4D] border border-[#D3E6D9]">Selesai</span></td>
-            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.html" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
+            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.php" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
           </tr>
           <tr class="hover:bg-[#FDFCFB] transition-colors h-[54px]">
             <td class="py-3 px-6 font-mono text-[13px] font-medium text-[#292929] whitespace-nowrap">LPR-2026-0001</td>
@@ -108,7 +108,7 @@
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E]">Gedung C, Lt. 1, Toilet Pria</td>
             <td class="py-3 px-6 font-body-md text-body-md text-[#69645E] whitespace-nowrap">28 Mar 2026</td>
             <td class="py-3 px-6 whitespace-nowrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E9F3EC] text-[#356B4D] border border-[#D3E6D9]">Selesai</span></td>
-            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.html" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
+            <td class="py-3 px-6 text-right whitespace-nowrap"><a href="detail-laporan.php" class="text-xs font-medium text-[#76563D] hover:text-[#5E422C] underline-offset-2 hover:underline">Lihat Detail</a></td>
           </tr>
         </tbody>
       </table>

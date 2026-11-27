@@ -1,25 +1,25 @@
 # Halaman Petugas
 
-Folder ini disiapkan untuk halaman role **Petugas** (belum diimplementasikan).
+Folder ini sengaja hanya berisi `README.md` pada **Fase 1**. Antarmuka role **Petugas** belum dirancang, sehingga belum ada file `.php`, `.html`, maupun `.js` yang dibuat untuk role ini.
 
 ## Rencana halaman (mengacu `docs/prd.md`)
 
 | File | Keterangan |
 |---|---|
-| `dashboard.html` | Ringkasan laporan masuk dan data barang |
-| `data-barang.html` | Daftar barang/fasilitas yang dikelola |
-| `barang-tambah.html` | Form tambah barang |
-| `barang-edit.html` | Form ubah barang |
-| `daftar-laporan.html` | Seluruh laporan yang masuk |
-| `detail-laporan.html` | Verifikasi, penolakan, dan pembaruan status |
-| `profil.html` | Profil petugas |
+| `dashboard.php` | Ringkasan laporan masuk dan data barang |
+| `data-barang.php` | Daftar barang/fasilitas yang dikelola |
+| `barang-tambah.php` | Form tambah barang |
+| `barang-edit.php` | Form ubah barang |
+| `daftar-laporan.php` | Seluruh laporan yang masuk |
+| `detail-laporan.php` | Verifikasi, penolakan, dan pembaruan status |
+| `profil.php` | Profil petugas |
 
-## Cara menambah halaman
+## Cara menambah halaman (fase berikutnya)
 
 1. Salin struktur dari `pages/mahasiswa/` (sidebar & topbar diisi otomatis oleh `assets/js/components/layout.js`).
 2. Set atribut pada `<body>`:
    ```html
    <body data-role="petugas" data-nav="dashboard" data-crumbs="Portal Petugas|Dashboard">
    ```
-3. Taruh script khusus halaman di `assets/js/pages/petugas/`.
-4. Gunakan path aset berawalan `../../assets/...`.
+3. Taruh script khusus halaman di `assets/js/pages/petugas/` (lihat placeholder di sana).
+4. Gunakan path aset berawalan `../../assets/...` dan tautan internal berakhiran `.php`.

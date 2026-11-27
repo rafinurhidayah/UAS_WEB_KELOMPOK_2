@@ -30,7 +30,7 @@
       <div class="w-full py-8 px-4 sm:px-8 flex flex-col gap-6 max-w-6xl">
         <div class="flex items-center justify-between px-1">
           <a
-            href="../../index.html"
+            href="../../index.php"
             class="inline-flex items-center gap-2 font-label-md text-label-md text-text-secondary hover:text-on-surface transition-colors duration-150"
           >
             <span class="material-symbols-outlined text-[18px]">arrow_back</span
@@ -294,7 +294,7 @@
                 Belum memiliki akun mahasiswa?
                 <a
                   class="font-label-md text-label-md text-primary hover:text-on-surface-variant underline decoration-transparent hover:decoration-primary transition-all ml-1"
-                  href="register.html"
+                  href="register.php"
                   >Daftar sekarang</a
                 >
               </p>

@@ -17,7 +17,7 @@
       <h1 class="font-display text-display text-on-surface">Riwayat Laporan</h1>
       <p class="font-body-md text-body-md text-text-secondary">Pantau perkembangan laporan kerusakan fasilitas yang telah Anda kirimkan.</p>
     </div>
-    <a href="buat-laporan.html" class="h-[42px] px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong flex items-center justify-center gap-2 transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">add</span><span>Buat Laporan</span></a>
+    <a href="buat-laporan.php" class="h-[42px] px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong flex items-center justify-center gap-2 transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">add</span><span>Buat Laporan</span></a>
   </div>
 
   <!-- Ringkasan -->
@@ -80,7 +80,7 @@
             <td class="py-4 px-5 text-text-secondary font-body-md">Gedung A, Lantai 2 – Ruang A203</td>
             <td class="py-4 px-5 text-text-secondary whitespace-nowrap">24 Feb 2026, 08:30 WIB</td>
             <td class="py-4 px-5 whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-waiting-bg text-status-waiting-text font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-waiting-text"></span>Menunggu</span></td>
-            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.html" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
+            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.php" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
           </tr>
           <tr class="hover:bg-canvas transition-colors">
             <td class="py-4 px-5 font-mono text-[13px] font-semibold text-on-surface">LPR-2026-0009</td>
@@ -88,7 +88,7 @@
             <td class="py-4 px-5 text-text-secondary font-body-md">Gedung B, Lantai 1 – Ruang Seminar 102</td>
             <td class="py-4 px-5 text-text-secondary whitespace-nowrap">22 Feb 2026, 14:15 WIB</td>
             <td class="py-4 px-5 whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-verified-bg text-status-verified-text font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-verified-text"></span>Diverifikasi</span></td>
-            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.html" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
+            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.php" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
           </tr>
           <tr class="hover:bg-canvas transition-colors">
             <td class="py-4 px-5 font-mono text-[13px] font-semibold text-on-surface">LPR-2026-0007</td>
@@ -96,7 +96,7 @@
             <td class="py-4 px-5 text-text-secondary font-body-md">Gedung C, Lantai 3 – Koridor Barat</td>
             <td class="py-4 px-5 text-text-secondary whitespace-nowrap">20 Feb 2026, 09:40 WIB</td>
             <td class="py-4 px-5 whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-processing-bg text-status-processing-text font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-processing-text"></span>Diproses</span></td>
-            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.html" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
+            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.php" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
           </tr>
           <tr class="hover:bg-canvas transition-colors">
             <td class="py-4 px-5 font-mono text-[13px] font-semibold text-on-surface">LPR-2026-0004</td>
@@ -104,7 +104,7 @@
             <td class="py-4 px-5 text-text-secondary font-body-md">Gedung D, Lantai 1 – Toilet Pria</td>
             <td class="py-4 px-5 text-text-secondary whitespace-nowrap">18 Feb 2026, 11:20 WIB</td>
             <td class="py-4 px-5 whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-completed-bg text-status-completed-text font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-completed-text"></span>Selesai</span></td>
-            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.html" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
+            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.php" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
           </tr>
           <tr class="hover:bg-canvas transition-colors">
             <td class="py-4 px-5 font-mono text-[13px] font-semibold text-on-surface">LPR-2026-0002</td>
@@ -112,7 +112,7 @@
             <td class="py-4 px-5 text-text-secondary font-body-md">Gedung A, Lantai 4 – Lab Komputer 401</td>
             <td class="py-4 px-5 text-text-secondary whitespace-nowrap">15 Feb 2026, 16:05 WIB</td>
             <td class="py-4 px-5 whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-error-bg text-status-error-text font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-error-text"></span>Ditolak</span></td>
-            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.html" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
+            <td class="py-4 px-5 text-right whitespace-nowrap"><a href="detail-laporan.php" class="inline-flex items-center gap-0.5 text-primary-container hover:text-primary font-label-md text-label-md transition-colors"><span>Lihat Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a></td>
           </tr>
         </tbody>
       </table>
@@ -131,7 +131,7 @@
         </div>
         <div class="flex items-center justify-between pt-2">
           <span class="font-caption text-caption text-text-muted">24 Feb 2026, 08:30 WIB</span>
-          <a href="detail-laporan.html" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+          <a href="detail-laporan.php" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
         </div>
       </div>
       <div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
@@ -145,7 +145,7 @@
         </div>
         <div class="flex items-center justify-between pt-2">
           <span class="font-caption text-caption text-text-muted">22 Feb 2026, 14:15 WIB</span>
-          <a href="detail-laporan.html" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+          <a href="detail-laporan.php" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
         </div>
       </div>
       <div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
@@ -159,7 +159,7 @@
         </div>
         <div class="flex items-center justify-between pt-2">
           <span class="font-caption text-caption text-text-muted">20 Feb 2026, 09:40 WIB</span>
-          <a href="detail-laporan.html" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+          <a href="detail-laporan.php" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
         </div>
       </div>
       <div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
@@ -173,7 +173,7 @@
         </div>
         <div class="flex items-center justify-between pt-2">
           <span class="font-caption text-caption text-text-muted">18 Feb 2026, 11:20 WIB</span>
-          <a href="detail-laporan.html" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+          <a href="detail-laporan.php" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
         </div>
       </div>
       <div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
@@ -187,7 +187,7 @@
         </div>
         <div class="flex items-center justify-between pt-2">
           <span class="font-caption text-caption text-text-muted">15 Feb 2026, 16:05 WIB</span>
-          <a href="detail-laporan.html" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+          <a href="detail-laporan.php" class="text-primary-container hover:text-primary font-label-md text-label-md flex items-center gap-0.5"><span>Detail</span><span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
         </div>
       </div>
     </div>
@@ -215,7 +215,7 @@
       <div class="w-14 h-14 rounded-full bg-surface-muted flex items-center justify-center text-text-muted mb-4"><span class="material-symbols-outlined text-[28px]">assignment_late</span></div>
       <h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Belum ada laporan.</h2>
       <p class="font-body-md text-body-md text-text-secondary mb-5 max-w-md">Mulai buat laporan kerusakan fasilitas kampus agar dapat segera ditangani oleh petugas teknis.</p>
-      <a href="buat-laporan.html" class="h-[42px] px-5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong flex items-center justify-center gap-2 transition-colors"><span class="material-symbols-outlined text-[18px]">add</span><span>Buat Laporan</span></a>
+      <a href="buat-laporan.php" class="h-[42px] px-5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong flex items-center justify-center gap-2 transition-colors"><span class="material-symbols-outlined text-[18px]">add</span><span>Buat Laporan</span></a>
     </div>
   </div>
 </div>

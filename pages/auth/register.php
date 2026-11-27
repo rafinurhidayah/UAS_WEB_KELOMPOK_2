@@ -39,7 +39,7 @@
           >
             <div class="flex flex-col gap-8">
               <a
-                href="../../index.html"
+                href="../../index.php"
                 class="inline-flex items-center gap-1.5 font-label-md text-label-md text-text-secondary hover:text-primary transition-colors duration-150 group"
               >
                 <span
@@ -174,7 +174,7 @@
           >
             <div class="flex flex-col gap-6">
               <a
-                href="../../index.html"
+                href="../../index.php"
                 class="lg:hidden inline-flex items-center gap-1.5 font-label-md text-label-md text-text-secondary hover:text-primary transition-colors"
               >
                 <span class="material-symbols-outlined text-[18px]"
@@ -378,7 +378,7 @@
                 Sudah memiliki akun?
                 <a
                   class="font-semibold text-primary hover:underline ml-1"
-                  href="login.html"
+                  href="login.php"
                   >Masuk di sini</a
                 >
               </p>
