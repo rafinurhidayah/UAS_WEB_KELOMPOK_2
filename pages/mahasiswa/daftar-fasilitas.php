@@ -1,3 +1,10 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../app/core/Auth.php';
+
+$currentUser = Auth::guard([ROLE_MAHASISWA]);
+?>
 <!doctype html>
 <html lang="id">
   <head>
@@ -608,7 +615,8 @@
         </div>
       </main>
     </div>
-    <script src="../../assets/js/components/layout.js"></script>
+    <?= Auth::userScript() ?>
+    <script src="../../assets/js/components/layout.js?v=2"></script>
     <script src="../../assets/js/pages/mahasiswa/daftar-fasilitas.js"></script>
   </body>
 </html>

@@ -1,3 +1,10 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../app/core/Auth.php';
+
+$currentUser = Auth::guard([ROLE_MAHASISWA]);
+?>
 <!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -187,4 +194,5 @@
   </div>
 </div>
 </main></div>
-<script src="../../assets/js/components/layout.js"></script></body></html>
+<?= Auth::userScript() ?>
+<script src="../../assets/js/components/layout.js?v=2"></script></body></html>

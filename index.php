@@ -1,3 +1,11 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/app/core/Auth.php';
+
+$currentUser = Auth::user();
+$flashes = Helper::allFlash();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -37,13 +45,46 @@
       </nav>
 
       <div class="flex items-center gap-space-sm">
-        <a class="hidden sm:inline-flex items-center justify-center h-[42px] px-space-md rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-muted transition-colors" href="pages/auth/login.php">Masuk</a>
-        <a class="inline-flex items-center justify-center h-[42px] px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors shadow-sm" href="pages/auth/register.php">Daftar Mahasiswa</a>
+        <?php if ($currentUser !== null): ?>
+          <span class="hidden sm:inline-flex items-center gap-1.5 px-space-sm font-label-md text-label-md text-text-secondary">
+            <span class="material-symbols-outlined text-[18px] text-primary-container">account_circle</span>
+            <?= Helper::e($currentUser['nama']) ?>
+          </span>
+          <?php if (($currentUser['nama_role'] ?? '') === ROLE_MAHASISWA): ?>
+            <a class="hidden sm:inline-flex items-center justify-center h-[42px] px-space-md rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-muted transition-colors" href="pages/mahasiswa/dashboard.php">Dashboard</a>
+          <?php endif; ?>
+          <a class="inline-flex items-center justify-center h-[42px] px-space-md rounded-lg bg-surface border border-border text-on-surface hover:bg-surface-muted font-label-md text-label-md transition-colors shadow-sm" href="pages/auth/logout.php">Keluar</a>
+        <?php else: ?>
+          <a class="hidden sm:inline-flex items-center justify-center h-[42px] px-space-md rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-muted transition-colors" href="pages/auth/login.php">Masuk</a>
+          <a class="inline-flex items-center justify-center h-[42px] px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors shadow-sm" href="pages/auth/register.php">Daftar Mahasiswa</a>
+        <?php endif; ?>
       </div>
     </div>
   </header>
 
   <main class="w-full pt-16 bg-canvas min-h-screen">
+
+    <?php if ($flashes !== []): ?>
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-4 flex flex-col gap-3">
+        <?php foreach ($flashes as $flash): ?>
+          <?php
+            $flashType = in_array(($flash['type'] ?? 'info'), ['success', 'error', 'info'], true)
+                ? $flash['type']
+                : 'info';
+            $flashStyles = [
+                'success' => ['bg-status-completed-bg', 'text-status-completed-text', 'border-status-completed-border', 'check_circle'],
+                'error'   => ['bg-status-error-bg', 'text-status-error-text', 'border-status-error-border', 'error'],
+                'info'    => ['bg-status-verified-bg', 'text-status-verified-text', 'border-status-verified-border', 'info'],
+            ];
+            [$flashBg, $flashText, $flashBorder, $flashIcon] = $flashStyles[$flashType];
+          ?>
+          <div class="w-full rounded-lg border px-4 py-3 flex items-start gap-2.5 shadow-sm <?= $flashBg ?> <?= $flashText ?> <?= $flashBorder ?>">
+            <span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5"><?= $flashIcon ?></span>
+            <p class="font-body-md text-body-md leading-relaxed"><?= Helper::e($flash['message'] ?? '') ?></p>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
 
     <!-- HERO -->
     <div class="relative w-full overflow-hidden">

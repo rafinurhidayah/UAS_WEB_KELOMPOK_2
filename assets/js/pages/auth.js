@@ -12,50 +12,51 @@
     });
   });
 
-  // Login
+  // Login: form dikirim sebagai POST ke PHP.
+  // Handler ini hanya memberi umpan balik visual; tidak memblokir submit.
   const loginForm = document.getElementById("login-form");
   if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+    loginForm.addEventListener("submit", () => {
       const btn = loginForm.querySelector("button[type=submit]");
-      const original = btn.innerHTML;
-      btn.disabled = true;
+      if (!btn) return;
+      btn.setAttribute("aria-busy", "true");
       btn.innerHTML =
         '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Memverifikasi akun...</span>';
-
-      // TODO: ganti dengan request ke backend
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML = original;
-      }, 1200);
     });
   }
 
-  // Register
+  // Register: validasi kecocokan sandi di sisi klien, lalu izinkan POST.
   const regForm = document.getElementById("register-form");
   if (regForm) {
     const pass = document.getElementById("password");
     const confirm = document.getElementById("confirmPassword");
 
     function checkMatch() {
-      confirm.setCustomValidity(
-        confirm.value && confirm.value !== pass.value
-          ? "Kata sandi tidak sama"
-          : "",
-      );
+      if (!pass || !confirm) return true;
+      const mismatch = confirm.value !== "" && confirm.value !== pass.value;
+      confirm.setCustomValidity(mismatch ? "Kata sandi tidak sama" : "");
+      return !mismatch;
     }
-    pass.addEventListener("input", checkMatch);
-    confirm.addEventListener("input", checkMatch);
+
+    if (pass && confirm) {
+      pass.addEventListener("input", checkMatch);
+      confirm.addEventListener("input", checkMatch);
+      confirm.addEventListener("change", checkMatch);
+    }
 
     regForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      checkMatch();
-      if (!regForm.reportValidity()) return;
+      // Blokir hanya bila konfirmasi sandi benar-benar tidak cocok.
+      if (!checkMatch()) {
+        e.preventDefault();
+        confirm.reportValidity();
+        return;
+      }
 
-      const data = Object.fromEntries(new FormData(regForm));
-      delete data.password;
-      delete data.confirmPassword;
-      console.log("Data registrasi:", data); // TODO: kirim ke backend
+      const btn = regForm.querySelector("button[type=submit]");
+      if (!btn) return;
+      btn.setAttribute("aria-busy", "true");
+      btn.innerHTML =
+        '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Mendaftarkan akun...</span>';
     });
   }
 })();

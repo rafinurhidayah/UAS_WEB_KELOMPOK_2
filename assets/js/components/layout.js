@@ -10,7 +10,6 @@
   const ROLES = {
     mahasiswa: {
       label: "Portal Mahasiswa",
-      user: { name: "Ahmad Fauzi", identity: "21051204012" },
       nav: [
         { key: "dashboard", href: "dashboard.php", icon: "dashboard", label: "Dashboard" },
         { key: "daftar-fasilitas", href: "daftar-fasilitas.php", icon: "domain", label: "Daftar Fasilitas" },
@@ -49,7 +48,34 @@
 
   const body = document.body;
   const role = ROLES[body.dataset.role] || ROLES.mahasiswa;
-  const user = role.user;
+
+  // Identitas dari sesi PHP (window.CURRENT_USER) bila tersedia.
+  const sessionUser =
+    window.CURRENT_USER && typeof window.CURRENT_USER === "object"
+      ? window.CURRENT_USER
+      : null;
+
+  // Cadangan untuk role yang halaman/sesinya belum tersedia (mis. Petugas/Admin).
+  // Mahasiswa selalu memakai window.CURRENT_USER dari sesi PHP.
+  const fallbackUser = role.user || { name: "", identity: "" };
+
+  const user = {
+    name: sessionUser && sessionUser.nama ? String(sessionUser.nama) : fallbackUser.name || "Pengguna",
+    identity:
+      sessionUser && sessionUser.nim_nip
+        ? String(sessionUser.nim_nip)
+        : sessionUser && sessionUser.email
+          ? String(sessionUser.email)
+          : fallbackUser.identity || "—",
+  };
+
+  // Escape sebelum disisipkan ke innerHTML (nama/identitas berasal dari input user).
+  const escapeHtml = (value) =>
+    String(value).replace(/[&<>"']/g, (char) => {
+      const map = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+      return map[char];
+    });
+
   const active = body.dataset.nav;
   const crumbs = (body.dataset.crumbs || role.label).split("|");
 
@@ -82,11 +108,18 @@
 
   const topbar = document.getElementById("topbar");
   if (topbar) {
-    const initials = user.name.split(" ").map(s => s[0]).join("").slice(0, 2);
+    const initials =
+      user.name
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((s) => s[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase() || "?";
     const crumbHtml = crumbs.map((c, i) => {
       const last = i === crumbs.length - 1;
       const cls = last ? "text-on-surface font-body-strong text-body-strong truncate" : "text-text-secondary";
-      return `${i ? '<span class="text-border">/</span>' : ""}<span class="${cls}">${c}</span>`;
+      return `${i ? '<span class="text-border">/</span>' : ""}<span class="${cls}">${escapeHtml(c)}</span>`;
     }).join("");
     topbar.innerHTML = `
       <div class="flex items-center gap-space-sm text-text-secondary font-body-md text-body-md">
@@ -101,13 +134,17 @@
       <div class="flex items-center gap-space-md">
         <div class="flex items-center gap-space-sm pl-space-xs">
           <div class="flex-col items-end text-right hidden sm:flex">
-            <span class="font-label-md text-label-md text-on-surface leading-tight">${user.name}</span>
-            <span class="font-caption text-caption text-text-muted">${user.identity}</span>
+            <span class="font-label-md text-label-md text-on-surface leading-tight">${escapeHtml(user.name)}</span>
+            <span class="font-caption text-caption text-text-muted">${escapeHtml(user.identity)}</span>
           </div>
-          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0" title="${initials}">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0" title="${escapeHtml(initials)}">
             <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
           </div>
         </div>
+        <a href="../auth/logout.php" title="Keluar" aria-label="Keluar"
+          class="p-1.5 rounded hover:bg-surface-muted text-text-secondary hover:text-on-surface transition-colors flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">logout</span>
+        </a>
       </div>`;
 
     // Toggle sidebar di layar kecil

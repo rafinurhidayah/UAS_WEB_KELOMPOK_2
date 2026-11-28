@@ -1,3 +1,14 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../app/controllers/AuthController.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    (new AuthController())->register();
+}
+
+$flashes = Helper::allFlash();
+?>
 <!doctype html>
 <html lang="id">
   <head>
@@ -30,6 +41,28 @@
       <div
         class="flex flex-col w-full items-center justify-center py-6 px-0 sm:px-4"
       >
+        <?php if ($flashes !== []): ?>
+          <div class="w-full max-w-[1152px] mb-3 flex flex-col gap-3">
+            <?php foreach ($flashes as $flash): ?>
+              <?php
+                $flashType = in_array(($flash['type'] ?? 'info'), ['success', 'error', 'info'], true)
+                    ? $flash['type']
+                    : 'info';
+                $flashStyles = [
+                    'success' => ['bg-status-completed-bg', 'text-status-completed-text', 'border-status-completed-border', 'check_circle'],
+                    'error'   => ['bg-status-error-bg', 'text-status-error-text', 'border-status-error-border', 'error'],
+                    'info'    => ['bg-status-verified-bg', 'text-status-verified-text', 'border-status-verified-border', 'info'],
+                ];
+                [$flashBg, $flashText, $flashBorder, $flashIcon] = $flashStyles[$flashType];
+              ?>
+              <div class="w-full rounded-lg border px-4 py-3 flex items-start gap-2.5 shadow-sm <?= $flashBg ?> <?= $flashText ?> <?= $flashBorder ?>">
+                <span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5"><?= $flashIcon ?></span>
+                <p class="font-body-md text-body-md leading-relaxed"><?= Helper::e($flash['message'] ?? '') ?></p>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
         <div
           class="w-full bg-surface border border-border rounded-2xl shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 max-w-[1152px]"
         >
@@ -206,7 +239,8 @@
                 </div>
               </div>
 
-              <form id="register-form" class="flex flex-col gap-5">
+              <form id="register-form" method="post" action="register.php" class="flex flex-col gap-5">
+                <?= Helper::csrfField() ?>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1.5 sm:col-span-2">
                     <label
@@ -216,7 +250,7 @@
                     >
                     <input
                       id="fullName"
-                      name="fullName"
+                      name="nama"
                       type="text"
                       required
                       placeholder="contoh: Ahmad Fauzi"
@@ -232,7 +266,7 @@
                     >
                     <input
                       id="nim"
-                      name="nim"
+                      name="nim_nip"
                       type="text"
                       inputmode="numeric"
                       pattern="[0-9]{8,14}"
@@ -272,7 +306,7 @@
                     >
                     <input
                       id="phone"
-                      name="phone"
+                      name="no_hp"
                       type="tel"
                       required
                       placeholder="081234567890"

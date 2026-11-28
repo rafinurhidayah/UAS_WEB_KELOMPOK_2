@@ -1,3 +1,14 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../app/controllers/AuthController.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    (new AuthController())->login();
+}
+
+$flashes = Helper::allFlash();
+?>
 <!doctype html>
 <html lang="id">
   <head>
@@ -45,6 +56,24 @@
             >SISTEM OPERASIONAL AKTIF
           </div>
         </div>
+
+        <?php foreach ($flashes as $flash): ?>
+          <?php
+            $flashType = in_array(($flash['type'] ?? 'info'), ['success', 'error', 'info'], true)
+                ? $flash['type']
+                : 'info';
+            $flashStyles = [
+                'success' => ['bg-status-completed-bg', 'text-status-completed-text', 'border-status-completed-border', 'check_circle'],
+                'error'   => ['bg-status-error-bg', 'text-status-error-text', 'border-status-error-border', 'error'],
+                'info'    => ['bg-status-verified-bg', 'text-status-verified-text', 'border-status-verified-border', 'info'],
+            ];
+            [$flashBg, $flashText, $flashBorder, $flashIcon] = $flashStyles[$flashType];
+          ?>
+          <div class="w-full rounded-lg border px-4 py-3 flex items-start gap-2.5 shadow-sm <?= $flashBg ?> <?= $flashText ?> <?= $flashBorder ?>">
+            <span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5"><?= $flashIcon ?></span>
+            <p class="font-body-md text-body-md leading-relaxed"><?= Helper::e($flash['message'] ?? '') ?></p>
+          </div>
+        <?php endforeach; ?>
 
         <div
           class="w-full bg-surface rounded-2xl shadow-sm border border-border overflow-hidden grid grid-cols-1 lg:grid-cols-12"
@@ -198,12 +227,13 @@
                 </p>
               </div>
 
-              <form id="login-form" class="flex flex-col space-y-5">
+              <form id="login-form" method="post" action="login.php" class="flex flex-col space-y-5">
+                <?= Helper::csrfField() ?>
                 <div class="flex flex-col space-y-1.5">
                   <label
                     class="font-label-md text-label-md text-on-surface"
                     for="campus-account"
-                    >Email Kampus / ID Akun</label
+                    >Email Kampus</label
                   >
                   <div class="relative flex items-center">
                     <span
@@ -212,7 +242,7 @@
                     >
                     <input
                       id="campus-account"
-                      name="account"
+                      name="email"
                       type="text"
                       autocomplete="username"
                       required

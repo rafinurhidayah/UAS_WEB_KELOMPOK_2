@@ -4,9 +4,9 @@
 
 Aplikasi web untuk melaporkan, memverifikasi, dan memantau penanganan kerusakan fasilitas kampus. Sistem memiliki tiga role: **Mahasiswa**, **Petugas**, dan **Admin**.
 
-Repositori ini sedang berada pada **Fase 1 — Persiapan Struktur Direktori Fullstack-Ready**. Frontend statis yang sudah ada dimigrasikan dari `.html` menjadi `.php` sebagai fondasi integrasi backend **PHP 8+ Native OOP + MySQL PDO** pada fase berikutnya.
+Repositori ini sudah berada pada **Fase 2 — Core Backend PHP OOP & Modul Autentikasi**. Frontend statis telah dimigrasikan dari `.html` menjadi `.php`, dan halaman Mahasiswa sudah dilindungi `Auth::guard(['Mahasiswa'])`.
 
-> **Status Fase 1:** Halaman publik dan halaman Mahasiswa sudah tersedia dalam format `.php`. Antarmuka **Petugas** dan **Admin** belum dirancang, sehingga folder terkait hanya berisi `README.md` sebagai placeholder. Data fasilitas masih memakai `assets/js/data/facilities.js` agar prototipe Mahasiswa tetap berjalan sampai API tersedia di Fase 3.
+> **Status Fase 2:** Registrasi mandiri Mahasiswa, single login (redirect otomatis sesuai role), logout, CSRF, serta model PDO untuk master data, fasilitas, dan laporan sudah tersedia. Antarmuka **Petugas** dan **Admin** belum dirancang, sehingga folder terkait hanya berisi `README.md` sebagai placeholder. Data katalog fasilitas pada halaman Mahasiswa masih memakai `assets/js/data/facilities.js` sampai API Fase 3 tersedia.
 
 ## Menjalankan Proyek
 
@@ -19,11 +19,31 @@ http://localhost/projek%20uas%20web/
 Prasyarat:
 
 - PHP 8.0 atau lebih baru (Apache/Nginx melalui Laragon atau XAMPP).
-- MySQL/MariaDB untuk Fase 2 dan seterusnya.
+- MySQL 8+ atau MariaDB dengan database `pelaporan_fasilitas`.
 - Koneksi internet saat membuka halaman, karena Tailwind CDN, Google Fonts, dan Material Symbols dimuat langsung dari internet.
 - Tidak ada proses build. Semua aset frontend dimuat langsung.
 
-## Arsitektur Fase 1
+## Setup Database & Akun Uji
+
+1. Import skema lalu seed. **Perhatian:** `schema.sql` menjalankan `DROP DATABASE IF EXISTS pelaporan_fasilitas`, jadi jangan dijalankan pada database berisi data penting.
+
+   ```bash
+   mysql -u root < database/schema.sql
+   mysql -u root --default-character-set=utf8mb4 < database/seed.sql
+   ```
+
+2. Akun staf bawaan dari `seed.sql`:
+
+   | Role    | Email                   | Password      |
+   |---------|-------------------------|---------------|
+   | Admin   | `admin@kampus.ac.id`    | `password123` |
+   | Petugas | `petugas@kampus.ac.id`  | `password123` |
+
+3. Registrasi mandiri melalui `pages/auth/register.php` **hanya untuk Mahasiswa** (`id_role = 1` di-hardcode di backend). Akun Petugas/Admin tidak dapat dibuat dari form publik.
+
+4. Konfigurasi koneksi default: host `127.0.0.1`, port `3306`, user `root`, password kosong, database `pelaporan_fasilitas`. Nilai dapat dioverride lewat environment `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS`, atau `APP_URL`.
+
+## Arsitektur
 
 ```text
 projek-uas-web/
@@ -33,12 +53,24 @@ projek-uas-web/
 ├── docs/
 │   ├── prd.md                     # Kebutuhan produk
 │   └── design.md                  # Design system
-├── database/                      # Menunggu siperusak.sql (Fase 2)
-├── app/                           # Kerangka backend PHP OOP (Fase 2 & 3)
-│   ├── config/                    # Konfigurasi aplikasi & koneksi PDO
-│   ├── core/                      # Router, Controller, Model, Session, dsb.
-│   ├── models/                    # Model data
-│   └── controllers/               # Controller per role/fitur
+├── database/
+│   ├── schema.sql                 # 9 tabel + 4 view (database pelaporan_fasilitas)
+│   └── seed.sql                   # Role, akun staf, dan master data sampel
+├── app/
+│   ├── config/
+│   │   ├── Constants.php          # Konstanta ENUM, role, BASE_URL, upload
+│   │   └── Database.php           # PDO Singleton (utf8mb4)
+│   ├── core/
+│   │   ├── Auth.php               # check(), user(), attempt(), guard()
+│   │   ├── Helper.php             # e(), CSRF, flash, kode laporan
+│   │   └── Uploader.php           # Validasi MIME & ukuran foto (maks 5 MB)
+│   ├── models/
+│   │   ├── UserModel.php
+│   │   ├── MasterDataModel.php
+│   │   ├── FacilityItemModel.php
+│   │   └── ReportModel.php
+│   └── controllers/
+│       └── AuthController.php     # register, login, logout
 ├── api/                           # Endpoint JSON (Fase 3)
 ├── assets/
 │   ├── css/
@@ -65,7 +97,8 @@ projek-uas-web/
 ├── pages/
 │   ├── auth/
 │   │   ├── login.php
-│   │   └── register.php
+│   │   ├── register.php
+│   │   └── logout.php
 │   ├── mahasiswa/
 │   │   ├── dashboard.php
 │   │   ├── daftar-fasilitas.php
@@ -104,7 +137,7 @@ Folder kosong yang disiapkan untuk fase berikutnya dijaga dengan file `.gitkeep`
   - `data-crumbs`: breadcrumb, dipisah `|`.
 
 - **Tailwind config tunggal** ada di `assets/js/config/tailwind-config.js` dan harus dimuat setelah CDN Tailwind.
-- **Backend:** PHP 8+ Native OOP dengan **PDO** (bukan `mysqli`). Kredensial dan konfigurasi environment akan disimpan di `.env` (diabaikan Git) pada Fase 2.
+- **Backend:** PHP 8+ Native OOP dengan **PDO** (bukan `mysqli`). Konfigurasi koneksi dibaca dari environment (`DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS`) dengan default Laragon; file `.env` diabaikan Git.
 - **Upload foto laporan** disimpan di `uploads/reports/`; isi folder diabaikan Git dan eksekusi PHP di dalamnya dimatikan melalui `.htaccess`.
 - **Data contoh** ada di `assets/js/data/facilities.js`; nanti diganti dengan data dari API pada Fase 3.
 
@@ -132,9 +165,9 @@ Tipografi utama: **Plus Jakarta Sans**. Token warna dan font didefinisikan di `a
 ## Rencana Fase
 
 1. **Fase 1 (selesai):** persiapan struktur direktori fullstack, migrasi `.html` → `.php`, dan pembaruan tautan internal.
-2. **Fase 2:** `database/siperusak.sql`, koneksi PDO, core PHP OOP, autentikasi, dan pembagian role.
-3. **Fase 3:** endpoint JSON di `api/`, `assets/js/services/api-client.js`, dan penggantian `facilities.js` dengan data backend.
-4. **Fase 4 dan seterusnya:** implementasi antarmuka Petugas, Admin, unggah foto, serta pengujian.
+2. **Fase 2 (selesai — modul autentikasi):** `database/schema.sql` + `seed.sql`, koneksi PDO, core `Auth`/`Helper`/`Uploader`, model data, `AuthController`, register/login/logout, dan proteksi halaman Mahasiswa.
+3. **Fase 3 (berikutnya):** endpoint JSON di `api/`, `assets/js/services/api-client.js`, dan penggantian `facilities.js` serta data mock halaman Mahasiswa dengan data backend.
+4. **Fase 4 dan seterusnya:** implementasi antarmuka Petugas, Admin, unggah foto, serta pengujian end-to-end.
 
 ## Dokumen
 
